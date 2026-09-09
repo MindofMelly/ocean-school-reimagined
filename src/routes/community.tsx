@@ -170,7 +170,7 @@ function CommunityPage() {
           <div className="mt-10 grid gap-px bg-paper/20">
             {involvements.map((item) => (
               <article key={item.title} className="bg-ink p-6">
-                {typeof item.icon === "function" ? <item.icon className="mb-5 size-8 text-brand-gold" aria-hidden="true" /> : <img src={item.icon} alt="" className="mb-5 size-16" />}
+                {item.visual === "heart" ? <Heart className="mb-5 size-8 text-brand-gold" aria-hidden="true" /> : <img src={item.visual === "knowledge" ? knowledge : love} alt="" className="mb-5 size-16" />}
                 <h3 className="font-display text-xl uppercase">{item.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-paper/65">{item.body}</p>
               </article>
