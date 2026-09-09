@@ -95,17 +95,17 @@ const involvements = [
   {
     title: "Volunteer",
     body: "Share your time, skills, or profession with our students. From reading buddies to career day speakers, our village is built by many hands.",
-    icon: Heart,
+    visual: "heart" as const,
   },
   {
     title: "Partner",
     body: "Community organizations, businesses, and institutions can support Kilombo through sponsorships, in-kind gifts, and shared programs.",
-    icon: knowledge,
+    visual: "knowledge" as const,
   },
   {
     title: "Pray & Advocate",
     body: "Lift up our students and educators, and help spread the word about Kilombo’s mission in your networks.",
-    icon: love,
+    visual: "love" as const,
   },
 ];
 
