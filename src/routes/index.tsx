@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, Heart, Menu, X } from "lucide-react";
 import logo from "@/assets/kilombo-logo.png";
 import students from "@/assets/kilombo-students.jpg";
@@ -41,7 +41,7 @@ function Index() {
         <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
           <a href="#top" aria-label="Kilombo School home" className="bg-paper px-3 py-2"><img src={logo} alt="Kilombo Academic and Cultural Institute" className="h-10 w-auto" /></a>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
-            <a href="#about" className="text-sm font-semibold hover:text-brand-gold">Our School</a>
+            <Link to="/about" className="text-sm font-semibold hover:text-brand-gold">Our School</Link>
             <a href="#learning" className="text-sm font-semibold hover:text-brand-gold">Learning</a>
             <a href="#community" className="text-sm font-semibold hover:text-brand-gold">Community</a>
             <a href={enrollUrl} target="_blank" rel="noreferrer" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</a>
@@ -50,7 +50,7 @@ function Index() {
           <details className="group relative md:hidden">
             <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-paper/30" aria-label="Open navigation"><Menu className="size-5 group-open:hidden" /><X className="hidden size-5 group-open:block" /></summary>
             <nav className="absolute right-0 top-14 flex w-64 flex-col border border-border bg-paper p-3 text-ink shadow-xl" aria-label="Mobile navigation">
-              <a href="#about" className="p-3 font-semibold">Our School</a><a href="#learning" className="p-3 font-semibold">Learning</a><a href="#community" className="p-3 font-semibold">Community</a>
+              <Link to="/about" className="p-3 font-semibold">Our School</Link><a href="#learning" className="p-3 font-semibold">Learning</a><a href="#community" className="p-3 font-semibold">Community</a>
               <a href={enrollUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</a>
               <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>
             </nav>
