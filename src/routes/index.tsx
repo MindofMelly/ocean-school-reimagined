@@ -39,7 +39,7 @@ function Index() {
     <main>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-paper/20 bg-ink/90 text-paper backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
-          <a href="#top" aria-label="Kilombo School home"><img src={logo} alt="Kilombo Academic and Cultural Institute" className="h-14 w-auto" /></a>
+          <a href="#top" aria-label="Kilombo School home" className="bg-paper px-3 py-2"><img src={logo} alt="Kilombo Academic and Cultural Institute" className="h-10 w-auto" /></a>
           <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
             <a href="#about" className="text-sm font-semibold hover:text-brand-gold">Our School</a>
             <a href="#learning" className="text-sm font-semibold hover:text-brand-gold">Learning</a>
@@ -59,7 +59,7 @@ function Index() {
       </header>
 
       <section id="top" className="relative flex min-h-[92svh] items-end overflow-hidden bg-ink pt-20 text-paper">
-        <video className="absolute inset-0 size-full object-cover opacity-75" autoPlay muted loop playsInline poster={community} aria-label="Kilombo students celebrating their first day of school"><source src={firstDayVideo} type="video/mp4" /></video>
+        <video className="absolute -top-[6%] left-0 h-[112%] w-full object-cover opacity-75" autoPlay muted loop playsInline poster={community} aria-label="Kilombo students celebrating their first day of school"><source src={firstDayVideo} type="video/mp4" /></video>
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-ink/40" />
         <div className="relative mx-auto grid w-full max-w-[1500px] gap-10 px-5 pb-10 pt-32 lg:grid-cols-[1fr_auto] lg:items-end lg:px-10 lg:pb-16">
           <div className="max-w-5xl">
