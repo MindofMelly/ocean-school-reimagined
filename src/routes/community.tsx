@@ -119,7 +119,7 @@ function CommunityPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/35 to-ink/25" />
         <div className="relative mx-auto flex min-h-[calc(76svh-5rem)] max-w-[1500px] flex-col justify-end px-5 pb-12 lg:px-10 lg:pb-16">
           <p className="mb-5 flex items-center gap-3 text-sm font-bold uppercase text-brand-gold"><span className="h-px w-10 bg-brand-gold" />Our village</p>
-          <h1 className="font-display max-w-5xl text-5xl uppercase leading-[0.95] sm:text-7xl lg:text-[7rem]">It takes a<br /><span className="text-brand-gold">community.</span></h1>
+          <h1 className="font-display max-w-5xl text-5xl uppercase leading-[0.95] sm:text-7xl lg:text-[7rem]">It takes a <br /><span className="text-brand-gold">community.</span></h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-paper/85 sm:text-xl">Kilombo is more than a school. It is a village of families, educators, elders, and allies committed to raising free, brilliant children.</p>
         </div>
       </section>
