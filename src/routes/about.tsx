@@ -49,6 +49,7 @@ function SiteHeader() {
           <Link to="/staff" className="text-sm font-semibold hover:text-brand-gold">Staff</Link>
           <Link to="/enroll" className="text-sm font-semibold hover:text-brand-gold">Admissions</Link>
           <Link to="/community" className="text-sm font-semibold hover:text-brand-gold">Community</Link>
+          <Link to="/bulletin" className="text-sm font-semibold hover:text-brand-gold">Bulletin</Link>
           <Link to="/contact" className="text-sm font-semibold hover:text-brand-gold">Contact</Link>
           <Link to="/enroll" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</Link>
           <a href={donateUrl} target="_blank" rel="noreferrer" className="bg-brand-red px-5 py-3 text-sm font-bold uppercase text-primary-foreground hover:bg-paper hover:text-ink">Donate</a>
@@ -61,6 +62,7 @@ function SiteHeader() {
             <Link to="/staff" className="p-3 font-semibold">Staff</Link>
             <Link to="/enroll" className="p-3 font-semibold">Admissions</Link>
             <Link to="/community" className="p-3 font-semibold">Community</Link>
+            <Link to="/bulletin" className="p-3 font-semibold">Bulletin</Link>
             <Link to="/contact" className="p-3 font-semibold">Contact</Link>
             <Link to="/enroll" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</Link>
             <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>

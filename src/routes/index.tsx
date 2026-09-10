@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, Heart, Menu, X } from "lucide-react";
 import logo from "@/assets/kilombo-logo.png";
@@ -9,6 +10,8 @@ import firstDayVideo from "@/assets/kilombo-first-day.mp4";
 
 const enrollUrl = "https://app.tuiopay.com/registration/c82f988";
 const donateUrl = "https://www.zeffy.com/en-US/fundraising/406b65c3-fdc9-4287-aaf3-a430bcd9ed28";
+const homecomingUrl = "https://www.zeffy.com/en-US/ticketing/celebrating-21-years-2nd-annual-kilombo-homecoming";
+const homecomingFlyer = "https://res.cloudinary.com/hxn9dbuhd/image/upload/f_auto,c_limit,w_1200,q_auto/v1788888868/organizations/9/3/e/f/93efb418-a839-4108-bfee-794c4299193c/22f2149c-577f-48c3-b95c-20663cb054e4.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,18 +39,42 @@ const ActionLink = ({ href, children, tone = "red" }: { href: string; children: 
   return <a href={href} target="_blank" rel="noreferrer" className={className}>{children}<ArrowRight aria-hidden="true" className="size-4" /></a>;
 };
 
+function HomecomingPopup() {
+  const [open, setOpen] = useState(true);
+  if (!open) return null;
+  return (
+    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-ink/80 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-label="Kilombo Homecoming announcement">
+      <div className="relative w-full max-w-md bg-paper text-ink shadow-2xl">
+        <button type="button" onClick={() => setOpen(false)} aria-label="Close" className="absolute right-3 top-3 z-10 flex size-9 items-center justify-center bg-ink text-paper hover:bg-brand-red"><X className="size-4" /></button>
+        <a href={homecomingUrl} target="_blank" rel="noreferrer"><img src={homecomingFlyer} alt="Celebrating 21 Years — 2nd Annual Kilombo Homecoming, October 3, 2026" className="w-full" /></a>
+        <div className="p-6">
+          <p className="text-xs font-bold uppercase text-brand-red">Save the date</p>
+          <h2 className="font-display mt-2 text-2xl uppercase leading-tight">21st Anniversary Homecoming</h2>
+          <p className="mt-2 text-sm text-muted-foreground">Saturday, October 3, 2026 · 2575 Snapfinger Rd, Decatur, GA · Free & family-friendly</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a href={homecomingUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center justify-center gap-2 bg-brand-green px-5 text-sm font-bold uppercase text-secondary-foreground hover:bg-ink">RSVP now<ArrowRight aria-hidden="true" className="size-4" /></a>
+            <button type="button" onClick={() => setOpen(false)} className="inline-flex min-h-11 items-center justify-center px-5 text-sm font-bold uppercase text-muted-foreground hover:text-ink">Maybe later</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <main>
+      <HomecomingPopup />
       <header className="fixed inset-x-0 top-0 z-50 border-b border-paper/20 bg-ink/90 text-paper backdrop-blur-md">
         <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
           <a href="#top" aria-label="Kilombo School home" className="bg-paper px-3 py-2"><img src={logo} alt="Kilombo Academic and Cultural Institute" className="h-10 w-auto" /></a>
-          <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-4 lg:flex" aria-label="Main navigation">
             <Link to="/about" className="text-sm font-semibold hover:text-brand-gold">Our School</Link>
             <Link to="/curriculum" className="text-sm font-semibold hover:text-brand-gold">Curriculum</Link>
             <Link to="/staff" className="text-sm font-semibold hover:text-brand-gold">Staff</Link>
             <Link to="/enroll" className="text-sm font-semibold hover:text-brand-gold">Admissions</Link>
             <Link to="/community" className="text-sm font-semibold hover:text-brand-gold">Community</Link>
+            <Link to="/bulletin" className="text-sm font-semibold hover:text-brand-gold">Bulletin</Link>
             <Link to="/contact" className="text-sm font-semibold hover:text-brand-gold">Contact</Link>
             <Link to="/enroll" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</Link>
             <a href={donateUrl} target="_blank" rel="noreferrer" className="bg-brand-red px-5 py-3 text-sm font-bold uppercase text-primary-foreground hover:bg-paper hover:text-ink">Donate</a>
@@ -55,7 +82,7 @@ function Index() {
           <details className="group relative lg:hidden">
             <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-paper/30" aria-label="Open navigation"><Menu className="size-5 group-open:hidden" /><X className="hidden size-5 group-open:block" /></summary>
             <nav className="absolute right-0 top-14 flex w-64 flex-col border border-border bg-paper p-3 text-ink shadow-xl" aria-label="Mobile navigation">
-              <Link to="/about" className="p-3 font-semibold">Our School</Link><Link to="/curriculum" className="p-3 font-semibold">Curriculum</Link><Link to="/staff" className="p-3 font-semibold">Staff</Link><Link to="/enroll" className="p-3 font-semibold">Admissions</Link><Link to="/community" className="p-3 font-semibold">Community</Link><Link to="/contact" className="p-3 font-semibold">Contact</Link>
+              <Link to="/about" className="p-3 font-semibold">Our School</Link><Link to="/curriculum" className="p-3 font-semibold">Curriculum</Link><Link to="/staff" className="p-3 font-semibold">Staff</Link><Link to="/enroll" className="p-3 font-semibold">Admissions</Link><Link to="/community" className="p-3 font-semibold">Community</Link><Link to="/bulletin" className="p-3 font-semibold">Bulletin</Link><Link to="/contact" className="p-3 font-semibold">Contact</Link>
               <Link to="/enroll" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</Link>
               <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>
             </nav>
@@ -78,6 +105,14 @@ function Index() {
       </section>
 
       <div className="overflow-hidden bg-brand-gold py-4 text-ink" aria-hidden="true"><div className="animate-marquee flex w-max whitespace-nowrap font-display text-xl uppercase"><span>Beautiful · Capable · Divine · Educate to Liberate · Community · Excellence · </span><span>Beautiful · Capable · Divine · Educate to Liberate · Community · Excellence · </span></div></div>
+
+      <Link to="/bulletin" className="group flex flex-col items-center justify-between gap-4 bg-ink px-6 py-6 text-paper sm:flex-row sm:px-10">
+        <div className="flex items-center gap-4">
+          <span className="h-2 w-2 shrink-0 animate-pulse bg-brand-red" aria-hidden="true" />
+          <p className="text-sm font-semibold sm:text-base"><span className="font-bold uppercase text-brand-gold">Homecoming — Oct 3, 2026.</span> See videos, flyers, and what's coming up on the Bulletin Board.</p>
+        </div>
+        <span className="flex items-center gap-2 text-sm font-bold uppercase text-brand-gold group-hover:text-paper">Visit the Bulletin Board<ArrowRight aria-hidden="true" className="size-4" /></span>
+      </Link>
 
       <section id="about" className="bg-paper px-5 py-20 lg:px-10 lg:py-32">
         <div className="mx-auto grid max-w-[1400px] gap-12 lg:grid-cols-[0.7fr_1.3fr]">
