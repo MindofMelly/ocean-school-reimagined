@@ -13,6 +13,10 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as CommunityRouteImport } from './routes/community'
 import { Route as DonateRouteImport } from './routes/donate'
+import { Route as CurriculumRouteImport } from './routes/curriculum'
+import { Route as StaffRouteImport } from './routes/staff'
+import { Route as EnrollRouteImport } from './routes/enroll'
+import { Route as ContactRouteImport } from './routes/contact'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +38,46 @@ const DonateRoute = DonateRouteImport.update({
   path: '/donate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CurriculumRoute = CurriculumRouteImport.update({
+  id: '/curriculum',
+  path: '/curriculum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnrollRoute = EnrollRouteImport.update({
+  id: '/enroll',
+  path: '/enroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
+  '/curriculum': typeof CurriculumRoute
+  '/staff': typeof StaffRoute
+  '/enroll': typeof EnrollRoute
+  '/contact': typeof ContactRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
+  '/curriculum': typeof CurriculumRoute
+  '/staff': typeof StaffRoute
+  '/enroll': typeof EnrollRoute
+  '/contact': typeof ContactRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +85,17 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/community': typeof CommunityRoute
   '/donate': typeof DonateRoute
+  '/curriculum': typeof CurriculumRoute
+  '/staff': typeof StaffRoute
+  '/enroll': typeof EnrollRoute
+  '/contact': typeof ContactRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/community' | '/donate'
+  fullPaths: '/' | '/about' | '/community' | '/donate' | '/curriculum' | '/staff' | '/enroll' | '/contact'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/community' | '/donate'
-  id: '__root__' | '/' | '/about' | '/community' | '/donate'
+  to: '/' | '/about' | '/community' | '/donate' | '/curriculum' | '/staff' | '/enroll' | '/contact'
+  id: '__root__' | '/' | '/about' | '/community' | '/donate' | '/curriculum' | '/staff' | '/enroll' | '/contact'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +103,10 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   CommunityRoute: typeof CommunityRoute
   DonateRoute: typeof DonateRoute
+  CurriculumRoute: typeof CurriculumRoute
+  StaffRoute: typeof StaffRoute
+  EnrollRoute: typeof EnrollRoute
+  ContactRoute: typeof ContactRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +139,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DonateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/curriculum': {
+      id: '/curriculum'
+      path: '/curriculum'
+      fullPath: '/curriculum'
+      preLoaderRoute: typeof CurriculumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enroll': {
+      id: '/enroll'
+      path: '/enroll'
+      fullPath: '/enroll'
+      preLoaderRoute: typeof EnrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +175,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   CommunityRoute: CommunityRoute,
   DonateRoute: DonateRoute,
+  CurriculumRoute: CurriculumRoute,
+  StaffRoute: StaffRoute,
+  EnrollRoute: EnrollRoute,
+  ContactRoute: ContactRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
