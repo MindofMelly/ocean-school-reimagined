@@ -46,6 +46,8 @@ function SiteHeader() {
           <Link to="/about" className="text-sm font-semibold hover:text-brand-gold">Our School</Link>
           <Link to="/community" className="text-sm font-semibold text-brand-gold">Community</Link>
           <Link to="/" hash="learning" className="text-sm font-semibold hover:text-brand-gold">Learning</Link>
+          <Link to="/" hash="community" className="text-sm font-semibold hover:text-brand-gold">Mission</Link>
+          <Link to="/donate" className="text-sm font-semibold hover:text-brand-gold">Support</Link>
           <a href={enrollUrl} target="_blank" rel="noreferrer" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</a>
           <a href={donateUrl} target="_blank" rel="noreferrer" className="bg-brand-red px-5 py-3 text-sm font-bold uppercase text-primary-foreground hover:bg-paper hover:text-ink">Donate</a>
         </nav>
@@ -55,6 +57,8 @@ function SiteHeader() {
             <Link to="/about" className="p-3 font-semibold">Our School</Link>
             <Link to="/community" className="p-3 font-semibold text-brand-red">Community</Link>
             <Link to="/" hash="learning" className="p-3 font-semibold">Learning</Link>
+            <Link to="/" hash="community" className="p-3 font-semibold">Mission</Link>
+            <Link to="/donate" className="p-3 font-semibold">Support</Link>
             <a href={enrollUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</a>
             <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>
           </nav>
