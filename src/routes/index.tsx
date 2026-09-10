@@ -45,13 +45,14 @@ function Index() {
             <Link to="/community" className="text-sm font-semibold hover:text-brand-gold">Community</Link>
             <a href="#learning" className="text-sm font-semibold hover:text-brand-gold">Learning</a>
             <a href="#community" className="text-sm font-semibold hover:text-brand-gold">Mission</a>
+            <Link to="/donate" className="text-sm font-semibold hover:text-brand-gold">Support</Link>
             <a href={enrollUrl} target="_blank" rel="noreferrer" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</a>
             <a href={donateUrl} target="_blank" rel="noreferrer" className="bg-brand-red px-5 py-3 text-sm font-bold uppercase text-primary-foreground hover:bg-paper hover:text-ink">Donate</a>
           </nav>
           <details className="group relative md:hidden">
             <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-paper/30" aria-label="Open navigation"><Menu className="size-5 group-open:hidden" /><X className="hidden size-5 group-open:block" /></summary>
             <nav className="absolute right-0 top-14 flex w-64 flex-col border border-border bg-paper p-3 text-ink shadow-xl" aria-label="Mobile navigation">
-              <Link to="/about" className="p-3 font-semibold">Our School</Link><Link to="/community" className="p-3 font-semibold">Community</Link><a href="#learning" className="p-3 font-semibold">Learning</a><a href="#community" className="p-3 font-semibold">Mission</a>
+              <Link to="/about" className="p-3 font-semibold">Our School</Link><Link to="/community" className="p-3 font-semibold">Community</Link><a href="#learning" className="p-3 font-semibold">Learning</a><a href="#community" className="p-3 font-semibold">Mission</a><Link to="/donate" className="p-3 font-semibold">Support</Link>
               <a href={enrollUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</a>
               <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>
             </nav>
