@@ -125,6 +125,28 @@ function DonatePage() {
         </div>
       </section>
 
+      <section className="bg-brand-red px-5 py-20 text-primary-foreground lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+          <div>
+            <p className="text-sm font-bold uppercase text-brand-gold">The Committed 1000</p>
+            <h2 className="font-display mt-5 text-4xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">1,000 people.<br /><span className="text-brand-gold">$25 a month.</span></h2>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">Microfunding is powerful. When 1,000 committed supporters each pledge a tax-deductible $25 a month, small gifts become $25,000 of steady, predictable support — every single month — for our students, teachers, and programs.</p>
+            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-primary-foreground/85">Your pledge might seem small, but together it provides resources, support, and opportunities our children can count on all year long.</p>
+            <div className="mt-8"><ActionLink href={donateUrl} tone="light">Join the Committed 1000</ActionLink></div>
+          </div>
+          <div className="border border-paper/25 p-7 sm:p-10">
+            <p className="font-display text-5xl uppercase text-brand-gold sm:text-6xl">$25<span className="text-2xl text-primary-foreground">/mo</span></p>
+            <p className="mt-3 text-sm font-bold uppercase">Your monthly pledge</p>
+            <ul className="mt-8 space-y-5 text-primary-foreground/85">
+              <li className="flex items-start gap-4"><span className="mt-1.5 size-2 shrink-0 bg-brand-gold" /><span><strong className="text-primary-foreground">Tax-deductible</strong> — every monthly gift is fully deductible.</span></li>
+              <li className="flex items-start gap-4"><span className="mt-1.5 size-2 shrink-0 bg-brand-gold" /><span><strong className="text-primary-foreground">Collective impact</strong> — 1,000 pledges become $25,000 each month.</span></li>
+              <li className="flex items-start gap-4"><span className="mt-1.5 size-2 shrink-0 bg-brand-gold" /><span><strong className="text-primary-foreground">Dependable support</strong> — steady funding lets us plan with confidence.</span></li>
+              <li className="flex items-start gap-4"><span className="mt-1.5 size-2 shrink-0 bg-brand-gold" /><span><strong className="text-primary-foreground">Cancel anytime</strong> — you stay in control of your giving.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section id="ways" className="bg-paper px-5 py-20 lg:px-10 lg:py-32">
         <div className="mx-auto max-w-[1400px]">
           <p className="text-sm font-bold uppercase text-brand-red">Ways to give</p>
