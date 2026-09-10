@@ -29,9 +29,10 @@ function ActionLink({ href, children, tone = "red" }: { href: string; children: 
     green: "bg-brand-green text-secondary-foreground hover:bg-ink",
     light: "bg-paper text-ink hover:bg-brand-gold",
   };
-
+  const className = `inline-flex min-h-12 items-center justify-center gap-3 px-6 text-sm font-bold uppercase transition-colors ${tones[tone]}`;
+  if (href.startsWith("/")) return <Link to={href} className={className}>{children}<ArrowRight aria-hidden="true" className="size-4" /></Link>;
   return (
-    <a href={href} target="_blank" rel="noreferrer" className={`inline-flex min-h-12 items-center justify-center gap-3 px-6 text-sm font-bold uppercase transition-colors ${tones[tone]}`}>
+    <a href={href} target="_blank" rel="noreferrer" className={className}>
       {children}<ArrowRight aria-hidden="true" className="size-4" />
     </a>
   );
@@ -42,24 +43,26 @@ function SiteHeader() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-paper/20 bg-ink/90 text-paper backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-[1500px] items-center justify-between px-5 lg:px-10">
         <Link to="/" aria-label="Kilombo School home" className="bg-paper px-3 py-2"><img src={logo} alt="Kilombo Academic and Cultural Institute" className="h-10 w-auto" /></Link>
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+        <nav className="hidden items-center gap-5 lg:flex" aria-label="Main navigation">
           <Link to="/about" className="text-sm font-semibold text-brand-gold">Our School</Link>
+          <Link to="/curriculum" className="text-sm font-semibold hover:text-brand-gold">Curriculum</Link>
+          <Link to="/staff" className="text-sm font-semibold hover:text-brand-gold">Staff</Link>
+          <Link to="/enroll" className="text-sm font-semibold hover:text-brand-gold">Admissions</Link>
           <Link to="/community" className="text-sm font-semibold hover:text-brand-gold">Community</Link>
-          <Link to="/" hash="learning" className="text-sm font-semibold hover:text-brand-gold">Learning</Link>
-          <Link to="/" hash="community" className="text-sm font-semibold hover:text-brand-gold">Mission</Link>
-          <Link to="/donate" className="text-sm font-semibold hover:text-brand-gold">Support</Link>
-          <a href={enrollUrl} target="_blank" rel="noreferrer" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</a>
+          <Link to="/contact" className="text-sm font-semibold hover:text-brand-gold">Contact</Link>
+          <Link to="/enroll" className="bg-brand-green px-5 py-3 text-sm font-bold uppercase text-secondary-foreground hover:bg-paper hover:text-ink">Enroll</Link>
           <a href={donateUrl} target="_blank" rel="noreferrer" className="bg-brand-red px-5 py-3 text-sm font-bold uppercase text-primary-foreground hover:bg-paper hover:text-ink">Donate</a>
         </nav>
-        <details className="group relative md:hidden">
+        <details className="group relative lg:hidden">
           <summary className="flex size-11 cursor-pointer list-none items-center justify-center border border-paper/30" aria-label="Open navigation"><Menu className="size-5 group-open:hidden" /><X className="hidden size-5 group-open:block" /></summary>
           <nav className="absolute right-0 top-14 flex w-64 flex-col border border-border bg-paper p-3 text-ink shadow-xl" aria-label="Mobile navigation">
             <Link to="/about" className="p-3 font-semibold text-brand-red">Our School</Link>
+            <Link to="/curriculum" className="p-3 font-semibold">Curriculum</Link>
+            <Link to="/staff" className="p-3 font-semibold">Staff</Link>
+            <Link to="/enroll" className="p-3 font-semibold">Admissions</Link>
             <Link to="/community" className="p-3 font-semibold">Community</Link>
-            <Link to="/" hash="learning" className="p-3 font-semibold">Learning</Link>
-            <Link to="/" hash="community" className="p-3 font-semibold">Mission</Link>
-            <Link to="/donate" className="p-3 font-semibold">Support</Link>
-            <a href={enrollUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</a>
+            <Link to="/contact" className="p-3 font-semibold">Contact</Link>
+            <Link to="/enroll" className="mt-2 bg-brand-green p-3 text-center font-bold uppercase text-secondary-foreground">Enroll</Link>
             <a href={donateUrl} target="_blank" rel="noreferrer" className="mt-2 bg-brand-red p-3 text-center font-bold uppercase text-primary-foreground">Donate</a>
           </nav>
         </details>
@@ -131,7 +134,7 @@ function AboutPage() {
       </section>
 
       <section className="grid lg:grid-cols-2">
-        <article className="bg-brand-gold px-6 py-20 text-ink sm:px-12 lg:p-20"><p className="text-sm font-bold uppercase">Join our school</p><h2 className="font-display mt-5 text-4xl uppercase sm:text-5xl">Let your child’s brilliance lead.</h2><p className="mt-5 max-w-xl leading-relaxed">Begin the enrollment process and discover a community built to see, challenge, and support the whole child.</p><div className="mt-8"><ActionLink href={enrollUrl} tone="green">Enroll at Kilombo</ActionLink></div></article>
+        <article className="bg-brand-gold px-6 py-20 text-ink sm:px-12 lg:p-20"><p className="text-sm font-bold uppercase">Join our school</p><h2 className="font-display mt-5 text-4xl uppercase sm:text-5xl">Let your child’s brilliance lead.</h2><p className="mt-5 max-w-xl leading-relaxed">Begin the enrollment process and discover a community built to see, challenge, and support the whole child.</p><div className="mt-8"><ActionLink href="/enroll" tone="green">Enroll at Kilombo</ActionLink></div></article>
         <article className="bg-brand-red px-6 py-20 text-primary-foreground sm:px-12 lg:p-20"><Heart aria-hidden="true" className="size-9" /><p className="mt-6 text-sm font-bold uppercase">Sustain the vision</p><h2 className="font-display mt-5 text-4xl uppercase sm:text-5xl">Help the freedom school grow.</h2><p className="mt-5 max-w-xl leading-relaxed text-primary-foreground/80">Every gift helps preserve culturally rooted education for today’s students and generations to come.</p><div className="mt-8"><ActionLink href={donateUrl} tone="light">Donate now</ActionLink></div></article>
       </section>
 
